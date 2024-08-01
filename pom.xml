@@ -40,14 +40,18 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7.1</version> <!-- Updated version -->
+                <version>2.5.1</version>
+                <configuration>
+                    <formats>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
-                            <goal>instrument</goal>
-                            <goal>check</goal>
+                            <goal>cobertura</goal>
                         </goals>
-                        <phase>test</phase>
                     </execution>
                 </executions>
             </plugin>
